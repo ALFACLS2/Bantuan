@@ -124,9 +124,16 @@ h1 { font-size: 20px; }
   justify-content: center;
   align-items: center;
 
+  z-index: 9999; /* INI PENTING */
+
   opacity: 0;
   pointer-events: none;
   transition: 0.3s ease;
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .page.active {
