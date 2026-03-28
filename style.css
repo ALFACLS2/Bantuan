@@ -1,11 +1,9 @@
 :root {
   --bg-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
   --profile-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
-
   --accent: linear-gradient(90deg, #ff7a18, #ff3d81);
 }
 
-/* BASE */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +19,7 @@ body {
   background: #0d0d0d;
 }
 
-/* BACKGROUND */
+/* BG */
 .bg {
   position: absolute;
   width: 100%;
@@ -56,65 +54,33 @@ body {
 }
 
 /* TEXT */
-h1 {
-  font-size: 20px;
-}
+h1 { font-size: 20px; }
+.sub { font-size: 13px; opacity: 0.7; margin-bottom: 10px; }
 
-.sub {
-  font-size: 13px;
-  opacity: 0.7;
-  margin-bottom: 10px;
-}
-
-/* ================= BUTTON SYSTEM ================= */
+/* BUTTON */
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 14px;
   border-radius: 10px;
   margin-bottom: 10px;
-
-  text-align: center;
   text-decoration: none;
   color: white;
-
   background: rgba(255,255,255,0.08);
   border: none;
-
   cursor: pointer;
-
-  transition: all 0.2s ease;
+  transition: 0.2s;
 }
 
-/* HOVER */
-.btn:hover {
-  background: rgba(255,255,255,0.2);
-  transform: scale(1.03);
-}
+.btn:hover { transform: scale(1.03); }
+.btn:active { transform: scale(0.95); background: var(--accent); }
 
-/* ACTIVE (INI YANG KAMU MAU 🔥) */
-.btn:active {
-  transform: scale(0.95);
-  background: var(--accent);
-}
+.primary { background: var(--accent); }
 
-/* PRIMARY */
-.primary {
-  background: var(--accent);
-}
-
-.primary:hover {
-  filter: brightness(1.1);
-}
-
-/* SEPARATOR */
-.separator {
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin: 15px 0;
-}
+/* ICON */
+.icon { width: 16px; margin-right: 6px; }
+.ig-icon { width: 14px; margin-right: 4px; }
 
 /* SOCIAL */
 .social {
@@ -123,8 +89,11 @@ h1 {
   gap: 10px;
 }
 
-.social .btn {
-  height: 45px;
+/* SEPARATOR */
+.separator {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 15px 0;
 }
 
 /* FOOTER */
@@ -136,25 +105,25 @@ h1 {
 }
 
 .creator-link {
-  display: block;
-  margin-top: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   color: white;
   text-decoration: none;
 }
 
-/* FAQ PAGE */
+/* FAQ LAYER */
 .page {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.95);
-  padding: 20px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(20px);
   border-radius: 20px;
 
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
-
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .page.active {
