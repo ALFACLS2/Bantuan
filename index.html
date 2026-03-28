@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Career Guide</title>
 
-<link rel="stylesheet" href="style.css">
+<!-- FIX VIEWPORT -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<title>Career Guide</title>
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -14,16 +16,13 @@
 
 <div class="card">
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-img"></div>
   </div>
 
-  <!-- TEXT -->
   <h1>Start Your Career</h1>
   <div class="sub">Ikuti langkah berikut untuk melamar kerja</div>
 
-  <!-- CTA -->
   <a href="https://alfakarir.alfamart.co.id/register" target="_blank" class="btn primary">
     🚀 Step 1: Register Account
   </a>
@@ -34,9 +33,8 @@
 
   <div class="separator"></div>
 
-  <!-- SOCIAL -->
   <div class="social">
-    <button class="btn" onclick="loadFAQ(this)">❓ FAQ</button>
+    <button class="btn" onclick="loadFAQ()">❓ FAQ</button>
 
     <a href="https://www.tiktok.com" target="_blank" class="btn">
       <svg class="icon" viewBox="0 0 24 24" fill="white">
@@ -46,7 +44,6 @@
     </a>
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div>Powered by <strong>REC CLS 2</strong></div>
 
@@ -58,11 +55,10 @@
     </a>
   </div>
 
-  <!-- FAQ LAYER -->
   <div id="faqPage" class="page"></div>
 
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
