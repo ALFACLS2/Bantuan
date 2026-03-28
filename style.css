@@ -1,142 +1,64 @@
-:root {
-  --bg-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
-  --profile-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
-  --accent: linear-gradient(90deg, #ff7a18, #ff3d81);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
+<!-- FIX VIEWPORT -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0d0d0d;
-  padding: 15px;
-}
+<title>Career Guide</title>
+<link rel="stylesheet" href="style.css?v=3">
+</head>
 
-/* BG */
-.bg {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-image) center/cover;
-  filter: blur(14px) brightness(0.5);
-  z-index: -1;
-}
+<body>
 
-/* CARD */
-.card {
-  width: 100%;
-  max-width: 380px;
-  padding: 15px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(20px);
-  color: white;
-  position: relative;
-}
+<div class="bg"></div>
 
-/* HERO */
-.hero {
-  height: 200px;
-  border-radius: 15px;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
+<div class="card">
 
-.hero-img {
-  width: 100%;
-  height: 100%;
-  background: var(--profile-image) center/cover;
-}
+  <div class="hero">
+    <div class="hero-img"></div>
+  </div>
 
-/* TEXT */
-h1 { font-size: 20px; }
-.sub { font-size: 13px; opacity: 0.7; margin-bottom: 10px; }
+  <h1>Start Your Career</h1>
+  <div class="sub">Ikuti langkah berikut untuk melamar kerja</div>
 
-/* BUTTON */
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: white;
-  background: rgba(255,255,255,0.08);
-  border: none;
-  cursor: pointer;
-  transition: 0.2s;
-}
+  <a href="https://alfakarir.alfamart.co.id/register" target="_blank" class="btn primary">
+    🚀 Step 1: Register Account
+  </a>
 
-.btn:hover { transform: scale(1.03); }
-.btn:active { transform: scale(0.95); background: var(--accent); }
+  <a href="https://alfakarir.alfamart.co.id/vacancy?filter=true&branch=cileungsi2&idb=ZlFwT3pUaVBqWmNQU2poOXVUazlnZz09" target="_blank" class="btn">
+    📄 Step 2: Apply Job
+  </a>
 
-.primary { background: var(--accent); }
+  <div class="separator"></div>
 
-/* ICON */
-.icon { width: 16px; margin-right: 6px; }
-.ig-icon { width: 14px; }
+  <div class="social">
+    <button class="btn" onclick="loadFAQ()">❓ FAQ</button>
 
-/* SOCIAL */
-.social {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
+    <a href="https://www.tiktok.com" target="_blank" class="btn">
+      <svg class="icon" viewBox="0 0 24 24" fill="white">
+        <path d="M12 2v14.5a3.5 3.5 0 1 1-3.5-3.5c.3 0 .6 0 .9.1V9.6a7 7 0 1 0 7 7V8.3c1.1.9 2.4 1.5 3.9 1.6V6.3c-2-.1-3.9-1.6-4.5-3.8H12z"/>
+      </svg>
+      TikTok
+    </a>
+  </div>
 
-/* SEPARATOR */
-.separator {
-  height: 1px;
-  background: rgba(255,255,255,0.1);
-  margin: 15px 0;
-}
+  <div class="footer">
+    <div>Powered by <strong>REC CLS 2</strong></div>
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 11px;
-  opacity: 0.6;
-}
+    <a href="https://www.linkedin.com/in/anggoro404/" target="_blank" class="creator-link">
+      <svg class="ig-icon" viewBox="0 0 24 24" fill="white">
+        <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2.2A2.8 2.8 0 1112 17a2.8 2.8 0 010-5.6z"/>
+      </svg>
+      404._.anggoro
+    </a>
+  </div>
 
-.creator-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: white;
-  text-decoration: none;
-}
+  <div id="faqPage" class="page"></div>
 
-/* FAQ OVERLAY (FULL FOCUS MODE) */
-.page {
-  position: fixed;
-  inset: 0;
-  background: #0d0d0d;
+</div>
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  z-index: 9999; /* INI PENTING */
-
-  opacity: 0;
-  pointer-events: none;
-  transition: 0.3s ease;
-}
-
-.page.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.page.active {
-  opacity: 1;
-  pointer-events: all;
-}
+<script src="script.js?v=3"></script>
+</body>
+</html>
