@@ -1,8 +1,11 @@
 :root {
   --bg-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
   --profile-image: url('https://res.cloudinary.com/dprt1m1wl/image/upload/v1774676745/ChatGPT_Image_Mar_28_2026_12_44_07_PM_uiti48.png');
+
+  --accent: linear-gradient(90deg, #ff7a18, #ff3d81);
 }
 
+/* BASE */
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +21,7 @@ body {
   background: #0d0d0d;
 }
 
+/* BACKGROUND */
 .bg {
   position: absolute;
   width: 100%;
@@ -26,6 +30,7 @@ body {
   filter: blur(14px) brightness(0.5);
 }
 
+/* CARD */
 .card {
   width: 360px;
   padding: 15px;
@@ -36,6 +41,7 @@ body {
   position: relative;
 }
 
+/* HERO */
 .hero {
   height: 220px;
   border-radius: 15px;
@@ -49,6 +55,7 @@ body {
   background: var(--profile-image) center/cover;
 }
 
+/* TEXT */
 h1 {
   font-size: 20px;
 }
@@ -59,42 +66,68 @@ h1 {
   margin-bottom: 10px;
 }
 
+/* ================= BUTTON SYSTEM ================= */
 .btn {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding: 14px;
   border-radius: 10px;
   margin-bottom: 10px;
+
   text-align: center;
   text-decoration: none;
   color: white;
+
   background: rgba(255,255,255,0.08);
+  border: none;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
 }
 
+/* HOVER */
+.btn:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.03);
+}
+
+/* ACTIVE (INI YANG KAMU MAU 🔥) */
+.btn:active {
+  transform: scale(0.95);
+  background: var(--accent);
+}
+
+/* PRIMARY */
 .primary {
-  background: linear-gradient(90deg, #ff7a18, #ff3d81);
+  background: var(--accent);
 }
 
+.primary:hover {
+  filter: brightness(1.1);
+}
+
+/* SEPARATOR */
 .separator {
   height: 1px;
   background: rgba(255,255,255,0.1);
   margin: 15px 0;
 }
 
+/* SOCIAL */
 .social {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
-.social a,
-.social button {
+.social .btn {
   height: 45px;
-  border-radius: 10px;
-  border: none;
-  color: white;
-  background: rgba(255,255,255,0.05);
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
   margin-top: 10px;
@@ -116,10 +149,12 @@ h1 {
   background: rgba(0,0,0,0.95);
   padding: 20px;
   border-radius: 20px;
+
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
-  transition: 0.3s;
+
+  transition: 0.3s ease;
 }
 
 .page.active {
