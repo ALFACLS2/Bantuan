@@ -1,9 +1,10 @@
-async function loadFAQ(btn) {
+async function loadFAQ() {
+  const page = document.getElementById("faqPage");
+
   try {
     const res = await fetch("./faq.html");
     const html = await res.text();
 
-    const page = document.getElementById("faqPage");
     page.innerHTML = html;
     page.classList.add("active");
 
@@ -13,5 +14,11 @@ async function loadFAQ(btn) {
 }
 
 function closeFAQ() {
-  document.getElementById("faqPage").classList.remove("active");
+  const page = document.getElementById("faqPage");
+
+  page.classList.remove("active");
+
+  setTimeout(() => {
+    page.innerHTML = "";
+  }, 300);
 }
