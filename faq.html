@@ -1,22 +1,87 @@
-<link rel="stylesheet" href="faq.css?v=3">
+<link rel="stylesheet" href="faq.css?v=5">
 
 <div class="faq-container">
 
-  <div class="faq-title">FAQ</div>
+  <div class="faq-title">FAQ Lamaran Kerja</div>
 
+  <!-- ITEM -->
   <div class="faq-item">
-    <div class="faq-question">Kenapa tidak bisa langsung apply?</div>
-    <div class="faq-answer">Harus daftar akun dulu.</div>
-    <img class="faq-image" src="https://images.unsplash.com/photo-1581093588401-22f9c0d2c68f">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      ❓ Kenapa tidak bisa langsung apply?
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-answer">
+        Karena sistem Alfamart mengharuskan kamu membuat akun terlebih dahulu sebelum melamar.
+      </div>
+
+      <div class="faq-note">
+        ⚠️ Wajib daftar dulu sebelum bisa apply
+      </div>
+    </div>
   </div>
 
+  <!-- ITEM -->
   <div class="faq-item">
-    <div class="faq-question">Apakah harus email aktif?</div>
-    <div class="faq-answer">Iya, untuk verifikasi.</div>
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      ❓ Kenapa setelah daftar belum langsung diproses?
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-answer">
+        Setelah registrasi, kamu harus login dan memilih posisi secara manual.
+      </div>
+    </div>
   </div>
 
+  <!-- ITEM -->
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      💡 Apakah harus email aktif?
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-answer">
+        Iya, email digunakan untuk verifikasi dan informasi proses seleksi.
+      </div>
+    </div>
+  </div>
+
+  <!-- ITEM (WITH IMAGE) -->
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      📱 Bisa daftar lewat HP?
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-answer">
+        Bisa, tapi disarankan menggunakan browser terbaru agar tidak error.
+      </div>
+
+      <img class="faq-image" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+    </div>
+  </div>
+
+  <!-- ITEM -->
+  <div class="faq-item">
+    <div class="faq-question" onclick="toggleFAQ(this)">
+      ⚠️ Apakah ada biaya?
+    </div>
+
+    <div class="faq-content">
+      <div class="faq-answer">
+        Tidak. Seluruh proses rekrutmen GRATIS. Hati-hati penipuan.
+      </div>
+
+      <div class="faq-note red">
+        🚫 Jangan pernah transfer uang
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <button class="faq-back" onclick="closeFAQ()">
-    ⬅ Kembali ke Halaman Utama
+    ⬅ Kembali & Lanjut Apply
   </button>
 
 </div>
