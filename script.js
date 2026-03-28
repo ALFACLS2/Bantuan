@@ -1,21 +1,15 @@
 async function loadFAQ(btn) {
-  btn.classList.add("clicked");
+  try {
+    const res = await fetch("./faq.html");
+    const html = await res.text();
 
-  setTimeout(async () => {
-    try {
-      const res = await fetch("./faq.html");
-      const html = await res.text();
+    const page = document.getElementById("faqPage");
+    page.innerHTML = html;
+    page.classList.add("active");
 
-      const page = document.getElementById("faqPage");
-      page.innerHTML = html;
-      page.classList.add("active");
-
-    } catch (err) {
-      alert("FAQ gagal dimuat 😏");
-    }
-
-    btn.classList.remove("clicked");
-  }, 150);
+  } catch {
+    alert("FAQ gagal dimuat 😏");
+  }
 }
 
 function closeFAQ() {
